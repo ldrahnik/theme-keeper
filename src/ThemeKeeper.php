@@ -26,9 +26,13 @@ class ThemeKeeper
 	 * @return Theme
 	 *
 	 * @throws ThemeNotFound
+	 * @throws InvalidParameter
 	 */
 	public function getTheme($name)
 	{
+		if ($name === '') {
+			throw new InvalidParameter("Invalid parameter name '{$name}'.");
+		}
 		if(!isset($this->themes[$name])) {
 			throw new ThemeNotFound("Theme '{$name}' not found.");
 		}
