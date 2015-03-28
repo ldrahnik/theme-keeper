@@ -2,6 +2,7 @@
 
 namespace ThemeKeeper\Theme;
 
+use ViewKeeper\Parser\Parser;
 use ViewKeeper\ViewKeeper;
 
 /**
@@ -18,8 +19,12 @@ class Theme {
 	/** @var array */
 	private $config;
 
-	public function __construct($config)
+	/** @var string */
+	private $name;
+
+	public function __construct($name, $config)
 	{
+		$this->name = $name;
 		$this->config = $config;
 	}
 
@@ -41,6 +46,14 @@ class Theme {
 
 	public function getView($name, $mask, $view = 'default', $suffix = 'latte')
 	{
-		return $this->getViewKeeper()->getView($name, $mask, $view, $suffix);
+		$mask = $this->getViewKeeper()->getView($name, $mask, $view, $suffix);
+
+		$mask = Parser::replace(
+			$mask,
+			[
+				'<theme>' => $this->name,
+			]
+		);
+		return $mask;
 	}
 }
