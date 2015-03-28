@@ -2,7 +2,6 @@ parameters:
 	themeDir: test
 
 extensions:
-	views: ViewKeeper\DI\ViewKeeperExtension
 	themes: ThemeKeeper\DI\ThemeKeeperExtension
 
 themes:
@@ -20,6 +19,3 @@ themes:
 			layouts: '%themeDir%/@<view>'
 
 	defaults:
-
-views:
-	emails: %themeDir%/emails
