@@ -2,7 +2,6 @@
 
 namespace ThemeKeeper\Tests;
 
-use Nette;
 use	Tester;
 use	Tester\Assert;
 
