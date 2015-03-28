@@ -18,7 +18,6 @@ class ThemeKeeperExtension extends CompilerExtension
 	private $defaults = [
 		'themeDir' => null,
 		'assetsDir' => null,
-		'filters' => [],
 		'views' => []
 	];
 
