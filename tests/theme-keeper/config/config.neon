@@ -1,0 +1,25 @@
+parameters:
+	themeDir: test
+
+extensions:
+	views: ViewKeeper\DI\ViewKeeperExtension
+	themes: ThemeKeeper\DI\ThemeKeeperExtension
+
+themes:
+	admin:
+		assetsDir: test
+		views:
+			controls: '%themeDir%/controls/<name>/<view>'
+			presenters: '%themeDir%/presenters/<name>/<view>'
+			layouts: '%themeDir%/@<view>'
+
+	web:
+		views:
+			controls: '%themeDir%/controls/<name>/<view>'
+			presenters: '%themeDir%/presenters/<name>/<view>'
+			layouts: '%themeDir%/@<view>'
+
+	defaults:
+
+views:
+	emails: %themeDir%/emails
