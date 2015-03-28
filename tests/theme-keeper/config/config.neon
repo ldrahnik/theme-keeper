@@ -8,14 +8,14 @@ themes:
 	admin:
 		assetsDir: test
 		views:
-			controls: '%themeDir%/<theme>/controls/<name>/<view>'
-			presenters: '%themeDir%/<theme>/presenters/<name>/<view>'
-			layouts: '%themeDir%/<theme>/@<view>'
+			controls: %themeDir%/<theme>/controls/<name>/<view>
+			presenters: %themeDir%/<theme>/presenters/<name>/<view>
+			layouts: %themeDir%/<theme>/@<view>
 
 	web:
 		views:
-			controls: '%themeDir%/<theme>/controls/<name>/<view>'
-			presenters: '%themeDir%/<theme>/presenters/<name>/<view>'
-			layouts: '%themeDir%/<theme>/@<view>'
+			controls: %themeDir%/<theme>/controls/<name>/<view>
+			presenters: %themeDir%/<theme>/presenters/<name>/<view>
+			layouts: %themeDir%/<theme>/@<view>
 
 	defaults:
