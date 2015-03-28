@@ -52,7 +52,8 @@ class Theme {
 			$mask,
 			[
 				'<theme>' => $this->name,
-				'<assetsDir>' => $this->config['assetsDir']
+				'<assetsDir>' => $this->config['assetsDir'],
+				'<themeDir>' => $this->config['themeDir']
 			]
 		);
 		return $mask;

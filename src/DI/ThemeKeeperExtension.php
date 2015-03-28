@@ -16,6 +16,7 @@ use ThemeKeeper\Utils\Arrays;
 class ThemeKeeperExtension extends CompilerExtension
 {
 	private $defaults = [
+		'themeDir' => null,
 		'assetsDir' => null,
 		'filters' => [],
 		'views' => []
