@@ -1,6 +1,2 @@
-tests/theme-keeper/output/*
-tests/theme-keeper/temp/*
-tests/temp/*
 vendor/*
 composer.lock
-coverage.dat
