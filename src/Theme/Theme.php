@@ -39,6 +39,11 @@ class Theme {
 		return $this->viewKeeper;
 	}
 
+	public function getThemeDir()
+	{
+		return $this->config['themeDir'];
+	}
+
 	public function getAssetsDir()
 	{
 		return $this->config['assetsDir'];

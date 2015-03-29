@@ -43,6 +43,11 @@ class ThemeKeeperTest extends Tester\TestCase
 		Assert::equal('test', $this->themes->getTheme('admin')->getAssetsDir());
 	}
 
+	function testThemeDir()
+	{
+		Assert::equal('theme', $this->themes->getTheme('admin')->getThemeDir());
+	}
+
 	function testGetView()
 	{
 		Assert::match($this->themes->getTheme('admin')->getView('foo', 'controls'), 'theme/admin/controls/foo/default.latte');
