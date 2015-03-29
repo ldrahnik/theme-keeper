@@ -77,4 +77,4 @@ Is able to set up path via these patterns (don't count patterns through view-kee
 Summary
 -------
 
-Template-keeper use View-keeper but still have good use view-keeper as extension, for example Mails templates are the same for entire app.
+- Template-keeper uses View-keeper but still have good use view-keeper as extension, for example Mails templates are the same for entire app.
