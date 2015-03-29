@@ -2,7 +2,7 @@
 
 namespace ThemeKeeper\Theme;
 
-use ViewKeeper\Parser\Parser;
+use UrlMatcher\Matcher;
 use ViewKeeper\ViewKeeper;
 
 /**
@@ -53,14 +53,14 @@ class Theme {
 	{
 		$mask = $this->getViewKeeper()->getView($name, $mask, $view, $suffix);
 
-		$mask = Parser::replace(
+		$matcher = new Matcher(
 			$mask,
 			[
-				'<theme>' => $this->name,
-				'<assetsDir>' => $this->config['assetsDir'],
-				'<themeDir>' => $this->config['themeDir']
+				'theme' => $this->name,
+				'assetsDir' => $this->config['assetsDir'],
+				'themeDir' => $this->config['themeDir']
 			]
 		);
-		return $mask;
+		return $matcher->parse();
 	}
 }

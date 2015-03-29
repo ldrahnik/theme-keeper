@@ -4,7 +4,7 @@ namespace ThemeKeeper\DI;
 
 use Nette\DI\CompilerExtension;
 use ThemeKeeper\Theme\Theme;
-use ThemeKeeper\Utils\Arrays;
+use UrlMatcher\Utils\Arrays;
 
 
 /**
