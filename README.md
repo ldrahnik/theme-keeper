@@ -33,7 +33,8 @@ extensions:
 	themes: ThemeKeeper\DI\ThemeKeeperExtension
 ```
 
-Example of usage
+Example
+-------
 
 ```sh
 themes:
