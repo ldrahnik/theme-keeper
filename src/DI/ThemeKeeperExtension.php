@@ -27,7 +27,11 @@ class ThemeKeeperExtension extends CompilerExtension
 		$config = $this->getConfig();
 
 		foreach ($config as $name => $configuration) {
-			$config[$name] = new Theme($name, Arrays::merge_only_exist_keys($configuration, $this->defaults));
+			if($configuration) {
+				$config[$name] = new Theme($name, Arrays::merge_only_exist_keys($this->defaults, $configuration));
+			} else {
+				$config[$name] = new Theme($name, $this->defaults);
+			}
 		}
 		$builder->addDefinition($this->prefix('ThemeKeeper'))
 			->setClass('ThemeKeeper\ThemeKeeper',
