@@ -63,8 +63,8 @@ themes:
     {
     	$this->template->setFile($this->themes->getView($this->name, 'controls'));
 		$this->template->render();
-		// you can cast getView without getTheme('default') because default name is automatically defaultTemplate for short use as that,
-		// if is not set up name 'default' is choose first theme in order
+		// you can cast getView without getTheme('default') because default name is automatically default
+		// theme for short use as that, if is not set up name 'default', is choosen first theme in order
     }
 ```
 
@@ -75,9 +75,8 @@ Is able to set up path via these patterns (don't count patterns through view-kee
 	<themeDir>
 ```
 
-
 Summary
 -------
 
 - Template-keeper uses View-keeper but view-keeper as extension have still good use, for example Mail templates are the same for entire app.
-- Crossing from small app with (view-keeper)[https://github.com/ldrahnik/view-keeper] to something bigger is not hard because is possible to let code as it's, just use another service.
+- Crossing from small app with [view-keeper](https://github.com/ldrahnik/view-keeper) to something bigger is not hard because is possible to let code as it's, just use another service.
