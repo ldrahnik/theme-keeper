@@ -15,5 +15,3 @@ themes:
 			controls: <themeDir>/<theme>/controls/<name>/<view>
 			presenters: <themeDir>/<theme>/presenters/<name>/<view>
 			layouts: <themeDir>/<theme>/@<view>
-
-	defaults:
