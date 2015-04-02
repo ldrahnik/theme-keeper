@@ -5,13 +5,14 @@ namespace ThemeKeeper\Theme;
 use UrlMatcher\Matcher;
 use ViewKeeper\ViewKeeper;
 
+
 /**
  * Class Arrays
  *
  * @author Lukáš Drahník (http://drahnik-lukas.com/)
  * @package ldrahnik\ThemeKeeper\Utils
  */
-class Theme {
+class Theme implements ThemeInterface {
 
 	/** @var ViewKeeper */
 	private $viewKeeper;
