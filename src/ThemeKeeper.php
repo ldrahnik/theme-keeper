@@ -22,15 +22,19 @@ class ThemeKeeper
 	}
 
 	/**
+	 * Return theme with $name or with name 'default', if not set up, return first in order.
+	 *
 	 * @param $name
 	 * @return Theme
 	 *
 	 * @throws ThemeNotFound
 	 * @throws InvalidParameter
 	 */
-	public function getTheme($name)
+	public function getTheme($name = null)
 	{
-		if ($name === '') {
+		if($name === null) {
+			return $this->getDefaultTheme();
+		} else if ($name === '') {
 			throw new InvalidParameter("Invalid parameter name '{$name}'.");
 		}
 		if(!isset($this->themes[$name])) {
@@ -39,6 +43,11 @@ class ThemeKeeper
 		return $this->themes[$name];
 	}
 
+	/**
+	 * Support for transition from View-keeper.
+	 *
+	 * @deprecated Use getTheme() function for get default theme instead.
+	 */
 	public function getThemeDir()
 	{
 		$default = $this->getDefaultTheme();
@@ -48,6 +57,11 @@ class ThemeKeeper
 		return $default->getThemeDir();
 	}
 
+	/**
+	 * Support for transition from View-keeper.
+	 *
+	 * @deprecated Use getTheme() function for get default theme instead.
+	 */
 	public function getAssetsDir()
 	{
 		$default = $this->getDefaultTheme();
@@ -57,6 +71,18 @@ class ThemeKeeper
 		return $default->getAssetsDir();
 	}
 
+	/**
+	 *
+	 * Support for transition from View-keeper.
+	 *
+	 * @deprecated Use getTheme() function for get default theme instead.
+	 *
+	 * @param $name
+	 * @param $mask
+	 * @param string $view
+	 * @param string $suffix
+	 * @return string
+	 */
 	public function getView($name, $mask, $view = 'default', $suffix = 'latte')
 	{
 		$default = $this->getDefaultTheme();
@@ -69,7 +95,7 @@ class ThemeKeeper
 	/**
 	 * @return Theme|null
 	 */
-	public function getDefaultTheme()
+	private function getDefaultTheme()
 	{
 		if(isset($this->themes['default'])) {
 			return $this->themes['default'];
