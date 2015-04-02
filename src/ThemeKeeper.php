@@ -14,7 +14,7 @@ class ThemeKeeper
 {
 
 	/** @var array */
-	private $themes;
+	private $themes = [];
 
 	public function __construct($themes)
 	{
