@@ -3,15 +3,15 @@ extensions:
 
 themes:
 	admin:
-		themeDir: theme
+		themeDir: theme/<themeName>
 		assetsDir: test
 		views:
-			controls: <themeDir>/<theme>/controls/<name>/<view>
-			presenters: <themeDir>/<theme>/presenters/<name>/<view>
-			layouts: <themeDir>/<theme>/@<view>
+			controls: <themeDir>/controls/<name>/<view>
+			presenters: <themeDir>/presenters/<name>/<view>
+			layouts: <themeDir>/@<view>
 
 	web:
 		views:
-			controls: <themeDir>/<theme>/controls/<name>/<view>
-			presenters: <themeDir>/<theme>/presenters/<name>/<view>
-			layouts: <themeDir>/<theme>/@<view>
+			controls: <themeDir>/<themeName>/controls/<name>/<view>
+			presenters: <themeDir>/<themeName>/presenters/<name>/<view>
+			layouts: <themeDir>/<themeName>/@<view>

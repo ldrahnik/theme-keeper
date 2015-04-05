@@ -42,26 +42,41 @@ class Theme implements ThemeInterface {
 
 	public function getThemeDir()
 	{
-		return $this->config['themeDir'];
+		return $this->parseMask($this->config['themeDir']);
 	}
 
 	public function getAssetsDir()
 	{
-		return $this->config['assetsDir'];
+		return $this->parseMask($this->config['assetsDir']);
 	}
 
 	public function getView($name, $mask, $view = 'default', $suffix = 'latte')
 	{
-		$mask = $this->getViewKeeper()->getView($name, $mask, $view, $suffix);
+		return $this->parseViewMask($this->getViewKeeper()->getView($name, $mask, $view, $suffix));
+	}
 
+	private function parseMask($mask)
+	{
 		$matcher = new Matcher(
 			$mask,
 			[
-				'theme' => $this->name,
-				'assetsDir' => $this->config['assetsDir'],
-				'themeDir' => $this->config['themeDir']
+				'themeName' => $this->name
 			]
 		);
 		return $matcher->parse();
 	}
+
+	private function parseViewMask($mask)
+	{
+		$matcher = new Matcher(
+			$mask,
+			[
+				'themeName' => $this->name,
+				'themeDir' => $this->getThemeDir(),
+				'assetsDir' => $this->getAssetsDir()
+			]
+		);
+		return $matcher->parse();
+	}
+
 }

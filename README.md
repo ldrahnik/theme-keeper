@@ -39,12 +39,12 @@ Example
 ```sh
 themes:
 	default:
-		themeDir: foo
-		assetsDir: foo
+		themeDir: %themesDir%/<themeName>
+		assetsDir: <themeDir>/assets
 		views:
-			controls: <themeDir>/<theme>/controls/<name>/<view>
-			presenters: <themeDir>/<theme>/presenters/<name>/<view>
-			layouts: <themeDir>/<theme>/@<view>
+			controls: <themeDir>/controls/<name>/<view>
+			presenters: <themeDir>/presenters/<name>/<view>
+			layouts: <themeDir>/@<view>
 ```
 
 ```php
@@ -70,7 +70,7 @@ themes:
 
 Is able to set up path via these patterns (don't count patterns through view-keeper - substitution is done successively)
 ``` sh
-	<theme>        	# theme name, 'default' in example usage
+	<themeName>
 	<assetsDir>
 	<themeDir>
 ```
