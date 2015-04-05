@@ -1,4 +1,8 @@
-ldrahnik/theme-keeper
+###Strongly recommend use [Kappa/ThemesManager](https://github.com/Kappa-org/ThemesManager).###
+If you use `Modules` structure [Kappa/ThemesManager](https://github.com/Kappa-org/ThemesManager) is more effective if not that is still better. Forgot on this package it was just attempt. Is deprecated and will not be more developed.
+
+
+ldrahnik/~~theme-keeper~~
 ======
 
 [![Build Status](https://travis-ci.org/ldrahnik/theme-keeper.svg)](https://travis-ci.org/ldrahnik/theme-keeper)
