@@ -50,7 +50,7 @@ class ThemeKeeperTest extends Tester\TestCase
 
 	function testGetView()
 	{
-		Assert::match($this->themes->getTheme('admin')->getView('foo', 'controls'), 'theme/admin/controls/foo/default.latte');
+		Assert::match('theme/admin/controls/foo/default.latte', $this->themes->getTheme('admin')->getView('foo', 'controls'));
 	}
 
 	function testGetDefaultTheme()
@@ -61,8 +61,8 @@ class ThemeKeeperTest extends Tester\TestCase
 		Assert::equal('theme/admin', $this->themes->getThemeDir());
 		Assert::equal('theme/admin', $this->themes->getTheme()->getThemeDir());
 
-		Assert::match($this->themes->getView('foo', 'controls'), 'theme/admin/controls/foo/default.latte');
-		Assert::match($this->themes->getTheme()->getView('foo', 'controls'), 'theme/admin/controls/foo/default.latte');
+		Assert::match('theme/admin/controls/foo/default.latte', $this->themes->getView('foo', 'controls'));
+		Assert::match('theme/admin/controls/foo/default.latte', $this->themes->getTheme()->getView('foo', 'controls'));
 	}
 }
 
