@@ -15,7 +15,7 @@ use UrlMatcher\Utils\Arrays;
  */
 class ThemeKeeperExtension extends CompilerExtension
 {
-	private $defaults = [
+	private $themeDefaults = [
 		'themeDir' => null,
 		'assetsDir' => null,
 		'views' => []
@@ -28,9 +28,9 @@ class ThemeKeeperExtension extends CompilerExtension
 
 		foreach ($config as $name => $configuration) {
 			if($configuration) {
-				$config[$name] = new Theme($name, Arrays::merge_only_exist_keys($this->defaults, $configuration));
+				$config[$name] = new Theme($name, Arrays::merge_only_exist_keys($this->themeDefaults, $configuration));
 			} else {
-				$config[$name] = new Theme($name, $this->defaults);
+				$config[$name] = new Theme($name, $this->themeDefaults);
 			}
 		}
 		$builder->addDefinition($this->prefix('ThemeKeeper'))
