@@ -7,6 +7,7 @@ ldrahnik/~~theme-keeper~~
 
 [![Build Status](https://travis-ci.org/ldrahnik/theme-keeper.svg)](https://travis-ci.org/ldrahnik/theme-keeper)
 [![Latest stable](https://img.shields.io/packagist/v/ldrahnik/theme-keeper.svg)](https://packagist.org/packages/ldrahnik/theme-keeper)
+[![Downloads total](https://img.shields.io/packagist/dt/ldrahnik/theme-keeper.svg?style=flat-square)](https://packagist.org/packages/ldrahnik/theme-keeper)
 
 Keeper of app themes.
 
